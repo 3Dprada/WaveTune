@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="WaveTune - catálogo musical con reproductor glassy"
+    />
+    <title>WaveTune · Música</title>
+    <link
+      href="../assets/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../css/music.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top shadow">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#7cf7ff">
+            <path d="M9 18.5a3 3 0 1 1-2-2.83V5l12-2.5v10.67a3 3 0 1 1-2-2.83V6.5L9 8.67z"/>
+          </svg>
+          <span class="fw-bold">WaveTune</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+          aria-controls="nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#albums">Álbumes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tracks">Canciones</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search" onsubmit="return false">
+            <input
+              class="form-control me-2"
+              id="buscar"
+              type="search"
+              placeholder="Buscar artista o canción"
+              aria-label="Buscar"
+            />
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-4">
+      <header class="py-4 text-center">
+        <h1 class="display-5 fw-bold text-glow">Tu catálogo musical</h1>
+        <p class="lead text-body-secondary">
+          Haz clic en cualquier álbum o canción para reproducirla con el
+          reproductor glassy.
+        </p>
+      </header>
+
+      <!-- Sección Álbumes -->
+      <section id="albums">
+        <h2 class="h4 section-title mb-3">
+          <span class="badge text-bg-primary">Álbumes</span>
+        </h2>
+        <div id="albumGrid" class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4"></div>
+      </section>
+
+      <!-- Sección Canciones -->
+      <section id="tracks" class="mt-5">
+        <h2 class="h4 section-title mb-3">
+          <span class="badge text-bg-primary">Canciones</span>
+        </h2>
+        <div id="trackList" class="list-group list-group-flush"></div>
+      </section>
+    </main>
+
+    <!-- Reproductor glassy (fijo abajo) -->
+    <div id="player" class="glass-player">
+      <div class="glass-player__art">
+        <img id="pArt" src="" alt="" draggable="false" />
+      </div>
+      <div class="glass-player__info">
+        <div id="pTitle" class="fw-semibold">Elige una canción</div>
+        <div id="pArtist" class="text-body-secondary small">—</div>
+      </div>
+      <div class="glass-player__controls">
+        <button id="pPrev" class="gbtn" type="button" aria-label="Anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zM18 6l-8 6 8 6z"/></svg>
+        </button>
+        <button id="pPlay" class="gbtn gbtn--play" type="button" aria-label="Reproducir">
+          <svg id="iPlay" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg id="iPause" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+        </button>
+        <button id="pNext" class="gbtn" type="button" aria-label="Siguiente">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 6h2v12h-2zM6 6l8 6-8 6z"/></svg>
+        </button>
+      </div>
+      <div class="glass-player__timeline">
+        <span id="pCurrent" class="time">0:00</span>
+        <input id="pSeek" type="range" min="0" max="100" value="0" aria-label="Progreso" />
+        <span id="pDuration" class="time">0:00</span>
+      </div>
+      <div class="glass-player__mute">
+        <button id="pMute" class="gbtn" type="button" aria-label="Silenciar">
+          <svg id="iVol" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16 8a5 5 0 0 1 0 8"/></svg>
+          <svg id="iMute" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16 8l6 8M22 8l-6 8"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <audio id="audio" preload="metadata"></audio>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/catalog.js"></script>
+    <script src="../js/music-player.js"></script>
+  </body>
+</html>
