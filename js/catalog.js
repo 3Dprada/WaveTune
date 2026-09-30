@@ -1,24 +1,58 @@
+/* Generado automáticamente por tools/generate-catalog.js. No editar a mano. */
 const CATALOG = {
-  albums: [
-    { id: "electric-dreams", title: "Electric Dreams", artist: "Nova Hertz", year: 2024 },
-    { id: "midnight-run", title: "Midnight Run", artist: "Luna Vectors", year: 2023 },
-    { id: "neon-skies", title: "Neon Skies", artist: "Akira Nord", year: 2024 },
-    { id: "velvet-moon", title: "Velvet Moon", artist: "Sable", year: 2022 },
-    { id: "golden-hour", title: "Golden Hour", artist: "Mira Sol", year: 2025 },
-    { id: "quantum-soul", title: "Quantum Soul", artist: "Datalynx", year: 2025 }
+  "albums": [
+    {
+      "id": "baile-inolvidable",
+      "title": "Baile Inolvidable",
+      "artist": "Bad Bunny",
+      "year": 2025,
+      "art": "baile-inolvidable.png"
+    },
+    {
+      "id": "diabla",
+      "title": "Diabla",
+      "artist": "Los Diozes",
+      "year": 2025,
+      "art": "diabla.png"
+    },
+    {
+      "id": "in-the-end",
+      "title": "In the End",
+      "artist": "Linkin Park",
+      "year": 2025,
+      "art": "in-the-end.png"
+    }
   ],
-  tracks: [
-    { id: 1, title: "Electric Dreams",  album: "electric-dreams", artist: "Nova Hertz",  file: "01-electric-dreams.mp3" },
-    { id: 2, title: "Midnight Run",     album: "midnight-run",    artist: "Luna Vectors", file: "02-midnight-run.mp3" },
-    { id: 3, title: "Neon Skies",       album: "neon-skies",      artist: "Akira Nord",   file: "03-neon-skies.mp3" },
-    { id: 4, title: "Velvet Moon",      album: "velvet-moon",     artist: "Sable",        file: "04-velvet-moon.mp3" },
-    { id: 5, title: "Golden Hour",      album: "golden-hour",     artist: "Mira Sol",     file: "05-golden-hour.mp3" },
-    { id: 6, title: "Quantum Soul",     album: "quantum-soul",    artist: "Datalynx",     file: "06-quantum-soul.mp3" }
+  "tracks": [
+    {
+      "id": 1,
+      "title": "Baile Inolvidable",
+      "album": "baile-inolvidable",
+      "artist": "Bad Bunny",
+      "file": "01-baile-inolvidable.mp3"
+    },
+    {
+      "id": 2,
+      "title": "Diabla",
+      "album": "diabla",
+      "artist": "Los Diozes",
+      "file": "02-diabla.mp3"
+    },
+    {
+      "id": 3,
+      "title": "In the End",
+      "album": "in-the-end",
+      "artist": "Linkin Park",
+      "file": "03-in-the-end.mp3"
+    }
   ]
 };
 
+/* Si un álbum no tiene portada se muestra un marcador genérico. */
 function artFile(albumId) {
-  return `../assets/artwork/${albumId}.svg`;
+  const a = CATALOG.albums.find((x) => x.id === albumId);
+  const art = a && a.art ? a.art : "_placeholder.svg";
+  return `../assets/artwork/${art}`;
 }
 
 function audioFile(track) {

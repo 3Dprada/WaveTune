@@ -1,0 +1,18 @@
+{
+  "name": "WaveTune",
+  "short_name": "WaveTune",
+  "description": "Catálogo musical con reproductor glassy",
+  "start_url": "HTML/index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#181820",
+  "theme_color": "#181820",
+  "icons": [
+    {
+      "src": "assets/artwork/baile-inolvidable.png",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
