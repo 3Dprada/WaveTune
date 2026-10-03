@@ -1,34 +1,23 @@
-/* STILO GLOBAL
--------------------------------------------------- */
-/* Espaciado debajo del pie de página y texto del cuerpo más claro */
-
-body {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  color: rgb(var(--bs-tertiary-color-rgb));
-}
-
-
 /* CUSTOMIZAR EL CAROUSEL
 -------------------------------------------------- */
 
-/* Carousel base clase */
+/* Carousel base de la clase */
 .carousel {
   margin-bottom: 4rem;
 }
-/* Una vez colocada la imagen, debemos ocuparnos del pie de foto */
+/* Una vez colocada la imagen, debemos ocuparnos del pie de foto. */
 .carousel-caption {
   bottom: 3rem;
   z-index: 10;
 }
 
-/* Declare las alturas debido al posicionamiento del elemento img. */
+/* Declarar las alturas debido al posicionamiento del elemento img. */
 .carousel-item {
   height: 32rem;
 }
 
 
-/* CONTENIDO MARKETIN
+/* CONTENIDO MARKETING
 -------------------------------------------------- */
 
 /* Centra el texto en las tres columnas situadas debajo del carrusel. */
@@ -36,13 +25,15 @@ body {
   margin-bottom: 1.5rem;
   text-align: center;
 }
+/* rtl:begin:ignore */
 .marketing .col-lg-4 p {
   margin-right: .75rem;
   margin-left: .75rem;
 }
+/* rtl:end:ignore */
 
 
-/* Featurettes
+/* Reports
 ------------------------- */
 
 .featurette-divider {
@@ -50,12 +41,18 @@ body {
 }
 
 /* Simplifica los encabezados de marketing. */
+/* rtl:begin:remove */
+.featurette-heading {
+  letter-spacing: -.05rem;
+}
 
-/* RESPONSIVE CSS
+/* rtl:end:remove */
+
+/* SENSIBLE CSS
 -------------------------------------------------- */
 
 @media (min-width: 40em) {
-  /* Aumentar el tamaño del contenido del carrusel */
+  /* Bump up size of carousel content */
   .carousel-caption p {
     margin-bottom: 1.25rem;
     font-size: 1.25rem;

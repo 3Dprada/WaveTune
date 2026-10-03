@@ -1,17 +1,24 @@
 /* WaveTune service worker: cache-first para assets, network-first para navegación */
-const CACHE = "wavetune-v8";
+const CACHE = "wavetune-v9";
 const PRECACHE = [
   "HTML/index.html",
   "js/catalog.js",
   "js/music-player.js",
-  "css/music.css",
+  "css/style.css",
   "assets/dist/css/bootstrap.min.css",
   "assets/dist/js/bootstrap.bundle.min.js",
   "manifest.webmanifest",
+  "assets/artwork/_placeholder.svg",
   "assets/artwork/baile-inolvidable.png",
   "assets/artwork/diabla.png",
+  "assets/artwork/el-farsante.png",
+  "assets/artwork/golden.png",
   "assets/artwork/in-the-end.png",
-  "assets/artwork/_placeholder.svg",
+  "assets/artwork/mbappe.png",
+  "assets/artwork/se-preparo.png",
+  "assets/artwork/si-la-calle-llama-remix.png",
+  "assets/artwork/si-la-calle-llama.png",
+  "assets/artwork/tu-foto.png",
 ];
 
 self.addEventListener("install", (e) => {

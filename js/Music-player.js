@@ -261,7 +261,7 @@
              data-id="${t.id}">
           <button type="button" class="track-play d-flex align-items-center gap-3 flex-grow-1 text-start"
                   data-id="${t.id}" aria-label="Reproducir ${esc(t.title)}">
-            <img src="${artFile(t.album)}" width="48" height="48" class="rounded track-thumb" alt="" loading="lazy" />
+            <img src="${artFile(t.album)}" width="48" height="48" class="track-thumb" alt="" loading="lazy" />
             <span class="flex-grow-1 text-start min-w-0">
               <span class="d-block fw-semibold text-truncate">${esc(t.title)}</span>
               <span class="d-block text-body-secondary small">${esc(t.artist)}</span>
@@ -311,7 +311,7 @@
               <circle cx="15" cy="12" r="1.4"/><circle cx="9" cy="19" r="1.4"/><circle cx="15" cy="19" r="1.4"/>
             </svg>
           </span>
-          <img src="${artFile(t.album)}" width="40" height="40" class="rounded track-thumb queue-art" alt="" loading="lazy" />
+          <img src="${artFile(t.album)}" width="40" height="40" class="track-thumb queue-art" alt="" loading="lazy" />
           <span class="queue-info flex-grow-1 text-start">
             <span class="d-block queue-title text-truncate">${esc(t.title)}</span>
             <span class="d-block text-body-secondary small">${esc(t.artist)}</span>

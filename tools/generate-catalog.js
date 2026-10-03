@@ -168,7 +168,18 @@ function main() {
     const frames = parseId3(buf);
 
     const m = /^(?:\d+\s*-?\s*)?(.+)\.mp3$/i.exec(file);
-    const slug = (m ? m[1] : file.replace(/\.mp3$/i, "")).toLowerCase().replace(/\s+/g, "-");
+    const base = m ? m[1] : file.replace(/\.mp3$/i, "");
+    /* se quitan paréntesis y signos para que el slug sea siempre un nombre
+       de archivo seguro: "Si La Calle Llama (Remix)" -> si-la-calle-llama-remix */
+    const slug =
+      base
+        .replace(/[()\[\]{}]/g, " ")
+        .toLowerCase()
+        .replace(/\s+/g, "-")
+        .replace(/[^a-z0-9À-ɏ-]/g, "")
+        .replace(/-+/g, "-")
+        .replace(/^-|-$/g, "") ||
+      "sin-nombre";
 
     let albumId = slug;
     let albumTitle = titleFromSlug(slug);
