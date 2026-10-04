@@ -3,96 +3,35 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>WaveTune</title>
+    <meta name="description" content="Glassy Music · reproductor con cola, favoritos y playlists">
+    <meta name="theme-color" content="#120101">
+    <title>Glassy Music · Inicio</title>
 
+    <link rel="icon" href="assets/artwork/golden.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/artwork/golden.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="css/Style.css">
-    <link rel="stylesheet" href="css/Carousel.css">
-    <link rel="stylesheet" href="css/Carousel.rtl.css">
-
   </head>
-  <body>
-  <header>
-    <div class="logo" style="color: aliceblue;"><i></i><span>Glassy Muusic</span></div>
-      <label class="search">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="#aaa">
-          <path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/>
-        </svg><input placeholder="Busca canciones, álbumes, artistas" aria-label="Buscar">
-      </label>
-    <div class="avatar" aria-label="Cuenta">C</div>
-  </header>
 
-    <aside>
-      <nav class="nav">
-            <a href="index.html">
-                <svg viwBox="0 0 24 24">
-                <path d="M12 3 2 12h3v8h5v-6h4v6h5v-8h3z"></path>
-                </svg>
-                Inicio
-            </a>
-            <a href="explorar/Explorar.html">
-                <svg viwBox="0 0 24 24">
-                <path d="m12 2 3 7 7 1-5 5 1 7-6-4-6 4 1-7-5-5 7-1z"></path>
-                </svg>
-                Explorar
-            </a>
-            <a href="biblioteca/Biblioteca.html">
-                <svg viwBox="0 0 24 24">
-                <path d="M4 6h2v14H4zm4-2h2v16H8zm4 3 8 1-2 12-8-1z"></path>
-                </svg>
-                Biblioteca
-            </a>
-      </nav>
-      <div class="sep"></div>
-
-      <button class="newpl" style="border-radius:18px;width:100%">+ Nueva playlist</button>
-
-      <div class="sep">
-        <a class="pl">Favoritos</a>
-        <a class="pl">Para programar</a>
-        <a class="pl">Noche de Hyprland</a>
-        <a class="pl">Gym</a>
-      </div>
-    </aside>
+  <body data-page="inicio">
+    <aside id="sidebar" aria-label="Navegación principal"></aside>
 
     <main>
-      <div class="chips">
-        <button class="chip on" style="border-radius:8px">Todo</button>
-        <button class="chip" style="border-radius:8px">Energía</button>
-        <button class="chip" style="border-radius:8px">Relax</button>
-        <button class="chip" style="border-radius:8px">Entrenamiento</button>
-        <button class="chip" style="border-radius:8px">Concentración</button>
-        <button class="chip" style="border-radius:8px">Fiesta</button>
-      </div>
-
-      <p class="sub">DE TU BIBLIOTECA</p>
-      <h2>Álbumes</h2>
-      <div class="row" id="r1"></div>
-
-      <h2>Artistas</h2>
-      <div class="row" id="r2"></div>
-
-      <h2>Canciones</h2>
-      <div class="songs" id="songs"></div>
+      <header class="topbar" id="topbar"></header>
+      <div class="scroll" id="view"></div>
     </main>
 
-    <footer>
-      <div class="prog" id="prog"><i id="bar"></i></div>
-      <div class="ctrl">
-        <button class="random" aria-label="Aleatorio" id="rm"><svg viewBox="0 0 24 24"><path d="M10.59 9.17 5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z" /></svg></button>
-        <button class="skip" aria-label="Anterior" id="prev"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg></button>
-        <button class="play" id="play" aria-label="Reproducir"><svg viewBox="0 0 24 24" id="ico"><path d="M8 5v14l11-7z"/></svg></button>
-        <button class="skip" aria-label="Siguiente" id="next"><svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6zM16 6h2v12h-2z"/></svg></button>
-        <button class="loop" aria-label="Bucle" id="lp"><svg viewBox="0 0 24 24"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z" /></svg></button>
-        <span class="time" id="time">0:00 / 3:20</span>
-      </div>
-      <div class="now" style="order:-1"><div class="thumb" id="nt"></div><div><b id="nb">Elige una canción</b><small id="ns">Artista</small></div></div>
-      <div class="right"><input class="vol" type="range" aria-label="Volumen" value="70"></div>
-    </footer>
+    <footer id="player" aria-label="Reproductor"></footer>
+
+    <audio id="audio" preload="metadata"></audio>
+    <audio id="preload" preload="auto"></audio>
 
     <script src="js/Data.js"></script>
+    <script src="js/Layout.js"></script>
+    <script src="js/Player.js"></script>
     <script src="js/Script.js"></script>
-    <script src="js/Music-player.js"></script>
-    <script src="tools/generate-catalog.js"></script>
   </body>
 </html>

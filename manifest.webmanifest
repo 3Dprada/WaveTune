@@ -1,18 +1,26 @@
 {
-  "name": "WaveTune",
-  "short_name": "WaveTune",
-  "description": "Catálogo musical con reproductor glassy",
-  "start_url": "HTML/index.html",
+  "name": "Glassy Music",
+  "short_name": "Glassy",
+  "description": "Reproductor con cola, favoritos y playlists",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#181820",
-  "theme_color": "#181820",
+  "orientation": "any",
+  "background_color": "#120101",
+  "theme_color": "#120101",
+  "lang": "es",
   "icons": [
     {
-      "src": "assets/artwork/baile-inolvidable.png",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "assets/artwork/golden.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "assets/artwork/golden.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
