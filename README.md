@@ -1,5 +1,14 @@
 <*!-----------------  Glassy Study Music -----------------!*>
 
+<img width="1918" height="875" alt="imagen" src="https://github.com/user-attachments/assets/40ad36e9-63dc-4d3a-ad1a-d124c537f8e1" />
+
+<img width="1912" height="1070" alt="imagen" src="https://github.com/user-attachments/assets/ff2c73fc-5e0c-479d-83ab-9ceba5393985" />
+
+<img width="1920" height="1076" alt="imagen" src="https://github.com/user-attachments/assets/c0569425-2c83-45b2-ab8c-b7f5d7b79f5a" />
+
+<img width="1920" height="1077" alt="imagen" src="https://github.com/user-attachments/assets/be1c2ef5-36af-4bde-8a20-8de47f803a53" />
+
+
 Es un pequeño proyecto de estudio de un reproductor de musica web inspirada en la interfaz de Youtube Music con una estetica "glassy"(cristal). Catalogo local de caciones, albunes y artistas, con cola de reproducción, favoritos, playList y login de demostración.
 
 <--- Ha un sigue en desarrollo --->
