@@ -1,0 +1,26 @@
+{
+  "name": "Glassy Music",
+  "short_name": "Glassy",
+  "description": "Reproductor con cola, favoritos y playlists",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#120101",
+  "theme_color": "#120101",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "assets/artwork/golden.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/artwork/golden.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
